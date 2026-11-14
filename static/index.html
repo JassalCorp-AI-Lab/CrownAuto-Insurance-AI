@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrownAuto Insurance AI</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="crest" aria-hidden="true">♛</span>
+        <div>
+          <h1>CrownAuto Insurance <span>AI</span></h1>
+          <p class="tagline">Quotes · Claims · Policy questions</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span id="status" class="status" title="Checking server…"><i></i><b>Connecting</b></span>
+        <button id="newChat" class="ghost" type="button" title="Start a new conversation">New chat</button>
+      </div>
+    </header>
+
+    <main id="chat" class="chat" aria-live="polite">
+      <section id="welcome" class="welcome">
+        <h2>How can we help today?</h2>
+        <p>Get an instant quote, file a claim with a damage photo, or ask about your coverage.</p>
+        <div class="chips">
+          <button class="chip" data-prompt="I want a quote for my Honda Civic, it's 2 years old, and I've been claims-free for 1 year">
+            <em>Quote</em> 2-year-old Honda Civic
+          </button>
+          <button class="chip" data-prompt="Quote for a Toyota RAV4, 3 years old, I'm a new driver. My postal code is M5V 3L9">
+            <em>Quote</em> RAV4 in Toronto
+          </button>
+          <button class="chip" data-prompt="I had an accident yesterday. My policy is POL-2026-12345. I hit a guardrail on the highway. Please help me file a claim.">
+            <em>Claim</em> File a claim (attach a photo)
+          </button>
+          <button class="chip" data-prompt="Can I keep my claims-free discount if I switch insurers?">
+            <em>Policy</em> Switching insurers
+          </button>
+          <button class="chip" data-prompt="Is flood damage covered?">
+            <em>Policy</em> Is flood damage covered?
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <div id="attachment" class="attachment" hidden>
+        <img id="attachmentImg" alt="Attached damage photo preview" />
+        <span id="attachmentName"></span>
+        <button id="removeAttachment" type="button" class="icon" title="Remove photo" aria-label="Remove photo">✕</button>
+      </div>
+      <div class="input-row">
+        <label class="icon attach" title="Attach a damage photo" aria-label="Attach a damage photo">
+          📎
+          <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+        </label>
+        <textarea id="input" rows="1" placeholder="Ask about a quote, a claim, or your policy…" aria-label="Message"></textarea>
+        <button id="send" class="send" type="submit" aria-label="Send">➤</button>
+      </div>
+      <p class="disclaimer">Illustrative demo. Quotes and payouts are estimates, not offers of insurance.</p>
+    </form>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
