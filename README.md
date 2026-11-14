@@ -163,6 +163,10 @@ cp .env.example .env          # then put your OPENAI_API_KEY in .env
 uv run uvicorn app.main:app --reload
 ```
 
+When the server is ready, it prints the CrownAuto banner and "Application startup complete":
+
+<p align="center"><img src="docs/screenshots/app-startup.png" alt="Terminal output of uv sync and uv run uvicorn, showing the CrownAuto ASCII banner and Application startup complete" width="700"></p>
+
 Open http://127.0.0.1:8000.
 
 The first policy question embeds the knowledge base into `data/chroma/`. This takes about a second and costs a fraction of a cent. After that the index is reused, and it is rebuilt automatically if `app/knowledge/documents.py` changes.

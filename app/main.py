@@ -10,6 +10,7 @@ import logging
 import threading
 from contextlib import asynccontextmanager
 
+import pyfiglet
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -33,8 +34,13 @@ def _warm_up_knowledge_base() -> None:
         log.warning("Knowledge base not indexed yet (%s). Will retry on first question.", e)
 
 
+def _print_banner() -> None:
+    print(pyfiglet.figlet_format("CrownAuto"), flush=True)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    _print_banner()
     settings = get_settings()
     app.state.chat_service = ChatService(build_graph(), settings.graph_recursion_limit)
 
