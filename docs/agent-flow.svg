@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="680" viewBox="0 0 960 680" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">How one message flows through CrownAuto Insurance AI</title>
+  <desc id="desc">A customer message goes to the supervisor, which routes it to the Quote, Claims or Policy Q&amp;A agent. Each agent calls only its own tools and gets the results back, then sends the reply to the customer.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6478"/>
+    </marker>
+
+    <!-- Icons: 24x24, stroked with currentColor -->
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5h16v11H10l-5 4v-4H4z"/>
+      <path d="M8 9.5h8M8 12.5h5"/>
+    </symbol>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M12 6v5M12 11l-7 5M12 11l7 5M12 11v5"/>
+      <circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
+    </symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12V4h8l10 10-8 8z"/>
+      <circle cx="7.5" cy="7.5" r="1.5"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2"/>
+      <path d="M8 7l2-3h4l2 3"/>
+      <circle cx="12" cy="13.5" r="3.5"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2z"/>
+      <path d="M4 20a2 2 0 0 0 2 1h14v-3"/>
+      <path d="M8 7h8M8 11h6"/>
+    </symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M8 12.5l3 3 5-6"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="960" height="680" rx="18" fill="#f6f4ef"/>
+
+  <!-- Customer message -->
+  <rect x="355" y="24" width="250" height="52" rx="26" fill="#ffffff" stroke="#c9a24a" stroke-width="2"/>
+  <use xlink:href="#i-chat" href="#i-chat" x="368" y="38" width="24" height="24" style="color:#c9a24a"/>
+  <text x="485" y="46" text-anchor="middle" font-size="15" font-weight="600" fill="#0f1f3d">Customer message</text>
+  <text x="485" y="65" text-anchor="middle" font-size="12" fill="#5b6478">text + optional damage photo</text>
+  <line x1="480" y1="76" x2="480" y2="106" stroke="#5b6478" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Supervisor -->
+  <rect x="350" y="108" width="260" height="70" rx="14" fill="#0f1f3d"/>
+  <use xlink:href="#i-route" href="#i-route" x="408" y="120" width="22" height="22" style="color:#c9a24a"/>
+  <text x="490" y="138" text-anchor="middle" font-size="17" font-weight="700" fill="#c9a24a">Supervisor</text>
+  <text x="480" y="160" text-anchor="middle" font-size="12" fill="#d7dcea">reads the message and picks one specialist</text>
+
+  <!-- Routing bus -->
+  <line x1="480" y1="178" x2="480" y2="210" stroke="#5b6478" stroke-width="2"/>
+  <line x1="170" y1="210" x2="790" y2="210" stroke="#5b6478" stroke-width="2"/>
+  <line x1="170" y1="210" x2="170" y2="248" stroke="#5b6478" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="480" y1="210" x2="480" y2="248" stroke="#5b6478" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="790" y1="210" x2="790" y2="248" stroke="#5b6478" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="178" y="235" font-size="12" font-style="italic" fill="#5b6478">quote</text>
+  <text x="488" y="235" font-size="12" font-style="italic" fill="#5b6478">claim or photo</text>
+  <text x="798" y="235" font-size="12" font-style="italic" fill="#5b6478">policy question</text>
+
+  <!-- Agents -->
+  <rect x="50" y="250" width="240" height="66" rx="12" fill="#e8efff" stroke="#3b5bdb" stroke-width="2"/>
+  <use xlink:href="#i-tag" href="#i-tag" x="92" y="262" width="22" height="22" style="color:#3b5bdb"/>
+  <text x="180" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#1e3a8a">Quote agent</text>
+  <text x="170" y="299" text-anchor="middle" font-size="12" fill="#3f4a63">3-plan quote in under a minute</text>
+
+  <rect x="360" y="250" width="240" height="66" rx="12" fill="#fdece6" stroke="#c2410c" stroke-width="2"/>
+  <use xlink:href="#i-camera" href="#i-camera" x="398" y="262" width="22" height="22" style="color:#c2410c"/>
+  <text x="490" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#9a3412">Claims agent</text>
+  <text x="480" y="299" text-anchor="middle" font-size="12" fill="#3f4a63">first notice of loss from a photo</text>
+
+  <rect x="670" y="250" width="240" height="66" rx="12" fill="#e9f6ee" stroke="#2f855a" stroke-width="2"/>
+  <use xlink:href="#i-book" href="#i-book" x="688" y="262" width="22" height="22" style="color:#2f855a"/>
+  <text x="800" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#22543d">Policy Q&amp;A agent</text>
+  <text x="790" y="299" text-anchor="middle" font-size="12" fill="#3f4a63">answers from the policy documents</text>
+
+  <!-- Tool call / result loops (one per agent) -->
+  <g stroke="#5b6478" stroke-width="2">
+    <line x1="95"  y1="316" x2="95"  y2="388" marker-end="url(#arrow)"/>
+    <line x1="155" y1="390" x2="155" y2="318" marker-end="url(#arrow)"/>
+    <line x1="405" y1="316" x2="405" y2="388" marker-end="url(#arrow)"/>
+    <line x1="465" y1="390" x2="465" y2="318" marker-end="url(#arrow)"/>
+    <line x1="715" y1="316" x2="715" y2="388" marker-end="url(#arrow)"/>
+    <line x1="775" y1="390" x2="775" y2="318" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="11" fill="#5b6478">
+    <text x="101" y="358">call</text>
+    <text x="161" y="358">result</text>
+    <text x="411" y="358">call</text>
+    <text x="471" y="358">result</text>
+    <text x="721" y="358">call</text>
+    <text x="781" y="358">result</text>
+  </g>
+
+  <!-- Tools boxes -->
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#0f1f3d">
+    <rect x="50" y="390" width="180" height="116" rx="10" fill="#ffffff" stroke="#b8bfcc" stroke-width="1.5"/>
+    <use xlink:href="#i-wrench" href="#i-wrench" x="62" y="399" width="15" height="15" style="color:#3b5bdb"/>
+    <text x="83" y="411" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#5b6478">QUOTE TOOLS</text>
+    <text x="62" y="433">vehicle_lookup</text>
+    <text x="62" y="452">calculate_premium</text>
+    <text x="62" y="471">postal_code_risk</text>
+    <text x="62" y="495" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-style="italic" fill="#5b6478">maths in app/domain/</text>
+
+    <rect x="360" y="390" width="180" height="116" rx="10" fill="#ffffff" stroke="#b8bfcc" stroke-width="1.5"/>
+    <use xlink:href="#i-wrench" href="#i-wrench" x="372" y="399" width="15" height="15" style="color:#c2410c"/>
+    <text x="393" y="411" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#5b6478">CLAIMS TOOLS</text>
+    <text x="372" y="433">verify_policy</text>
+    <text x="372" y="452">analyze_damage_image</text>
+    <text x="372" y="471">estimate_payout</text>
+    <text x="372" y="495" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-style="italic" fill="#5b6478">vision model + app/domain/</text>
+
+    <rect x="670" y="390" width="180" height="116" rx="10" fill="#ffffff" stroke="#b8bfcc" stroke-width="1.5"/>
+    <use xlink:href="#i-wrench" href="#i-wrench" x="682" y="399" width="15" height="15" style="color:#2f855a"/>
+    <text x="703" y="411" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#5b6478">POLICY TOOLS</text>
+    <text x="682" y="433">policy_kb_search</text>
+    <text x="682" y="495" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" font-size="11" font-style="italic" fill="#5b6478">search in ChromaDB (RAG)</text>
+  </g>
+
+  <!-- Reply path -->
+  <g stroke="#c9a24a" stroke-width="2.5" fill="none">
+    <line x1="265" y1="316" x2="265" y2="550"/>
+    <line x1="575" y1="316" x2="575" y2="550"/>
+    <line x1="885" y1="316" x2="885" y2="550"/>
+    <line x1="265" y1="550" x2="885" y2="550"/>
+    <line x1="480" y1="550" x2="480" y2="572" marker-end="url(#arrow)"/>
+  </g>
+  <text x="275" y="542" font-size="12" font-style="italic" fill="#8a6d24">reply, once no more tools are needed</text>
+
+  <!-- Answer -->
+  <rect x="330" y="574" width="300" height="52" rx="26" fill="#0f1f3d"/>
+  <use xlink:href="#i-check" href="#i-check" x="346" y="588" width="24" height="24" style="color:#c9a24a"/>
+  <text x="490" y="597" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Answer to the customer</text>
+  <text x="490" y="615" text-anchor="middle" font-size="12" fill="#d7dcea">labelled with the agent and tools used</text>
+
+  <!-- Footnote -->
+  <text x="480" y="658" text-anchor="middle" font-size="12" fill="#5b6478">Each agent can call only its own tools, and every tool result goes back to the agent that asked for it.</text>
+</svg>
